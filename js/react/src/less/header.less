@@ -106,7 +106,7 @@
       font-weight: 400;
       letter-spacing: 1px;
       a.nav-link {
-        text-shadow: 0px 0px 3px @dark-grn-type;
+        text-shadow: 0px 0px 3px @text-strong;
         &:hover {
           text-shadow: none;
         }
@@ -142,7 +142,7 @@
       font-size: 0.9em;
       color: white;
       background: none;
-      text-shadow: 0px 0px 3px @dark-grn-type;
+      text-shadow: 0px 0px 3px @text-strong;
       padding-right: 0.1rem;
       padding-left: 0.1rem;
       .border-rounded-sm();
@@ -193,11 +193,11 @@
           margin-right: 10px;
           max-width: 350px !important;
           height: 40px;
-          border: 2px solid @med-green;
+          border: 2px solid @neutral-mid;
           display: inline;
-          color: @med-green;
+          color: @text-strong;
           &::placeholder {
-            color: @gray-type;
+            color: @text-muted;
           }
         }
         .dropdown-menu {
@@ -306,14 +306,14 @@
         }
         ul#site-header-dropdowns {
           position: absolute;
-          background-color: @med-green;
+          background-color: @neutral-mid;
           text-align: left;
           margin-top: 6px;
           padding: 0 0 1em 0;
           min-width: 300px;
           width: 33vw;
           height: calc(100vh - 61px);
-          border-right: 1px solid @dark-green;
+          border-right: 1px solid @neutral-mid-hover;
           border-bottom-right-radius: 10px;
           .mobile-inner-container {
             display: initial;
@@ -370,7 +370,7 @@
                 font-size: 1.3125rem;
                 font-weight: 600;
                 line-height: 2.75rem;
-                color: @dark-grn-type !important;
+                color: @text-strong !important;
                 &:last-child {
                   border-radius: 0 !important;
                 }
@@ -418,8 +418,8 @@
           }
         }
         button#site-search-toggler:hover {
-          color: @dark-green;
-          background: @hover-green;
+          color: @accent;
+          background: @bg-panel;
         }
         .widget-wrapper {
           //display: none;
@@ -428,7 +428,7 @@
           margin-left: 0;
           top: 3.8em;
           position: absolute;
-          background-color: @med-green;
+          background-color: @neutral-mid;
           padding-bottom: 0.8rem;
           border-bottom-left-radius: 10px;
           border-bottom-right-radius: 10px;

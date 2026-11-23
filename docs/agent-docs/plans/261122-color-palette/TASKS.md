@@ -38,7 +38,7 @@ Tasks within a wave are independent; a wave starts only after the previous wave 
   - Done when: compiled CSS diff is empty.
   - Result (2026-11-22): 21 replacements (garden 10, taxa 6, inventory 3, rare 2). All 7 compiled files match the baseline checksums. No palette-colored literals remain in any LESS file outside `mixins.less`.
 
-- [x] T5: Move JSX inline colors to LESS
+- [x] T5: Move JSX inline colors to LESS (commit 9ddee3716)
   - Files: `js/react/src/common/iconButton.jsx`, `js/react/src/common/filterSidebar.jsx`, `js/react/src/identify/sidebar.jsx`, plus the matching LESS file
   - Do: Move inline `color` / `backgroundColor` literals into class rules that use variables, unless the color is computed at runtime.
   - Tests: `npm run build` from `js/react`; visual check against T1 screenshots.
@@ -50,11 +50,19 @@ Tasks within a wave are independent; a wave starts only after the previous wave 
 
 ## Wave 3: Rename and swap palette
 
-- [ ] T6: Introduce role variables and migrate call sites
+- [x] T6: Introduce role variables and migrate call sites
   - Files: `js/react/src/less/mixins.less` and every LESS file that uses the old variables
   - Do: Add the role variables from the PLAN.md table with their new values. Replace each old variable use with its role variable. For `@dark-green`, `@med-green` and `@med-dark-green`, decide per use site whether it is an accent (links, primary buttons) or neutral (headings, borders, secondary buttons, icons), and list any unclear cases in the Handoff. Pick an `@accent-hover` value darker than `#3c641e`. Remove the old variables once nothing references them, and update the variable list in `docs/agent-docs/react-less.md`.
   - Tests: build (an undefined variable fails the LESS build); check text/background pairs against WCAG AA.
   - Done when: no old variable names remain (`grep -rE '@(light-green|med-green|med-dark-green|dark-green|dark-grn-type|dark-gray|gray-type|type-primary|ivory)\b' js/react/src/less` is empty), all 7 compiled CSS files are rebuilt, and contrast checks pass.
+  - Result (2026-11-22): 245 lines changed across 9 LESS files. One-to-one renames for single-role variables; 128 uses of `@med-green` / `@dark-green` / `@med-dark-green` classified one by one (accent: links, buttons, active states, sliders, clickable icons; text-heading: headings; neutral-mid: bars, dividers, scrollbars, input borders; text-strong / text-muted: typed text / placeholders). The T2 temporary variables were folded into roles. Added `@accent-hover` `#2d4b16`, `@accent-divider`, `@accent-tint`. No old names remain; build passes; 11 contrast pairs all pass AA (lowest: `@text-muted` on `@bg-panel`, 4.99).
+  - Fix after first screenshots: `.text-light-green` (only used on `h3`) had been mapped to accent, which left taxa sidebar headings green; changed to `@text-heading`.
+  - Judgement calls to review in T7:
+    - `theme.less` `.slide-col-1 .row a` (home hero links over a dark photo) set to `@bg-panel` (light), not accent; dark green would be unreadable there.
+    - Footer bar, scrolled-header dropdowns, dropdown menus and the rare-page filter modal backgrounds became `@neutral-mid` gray.
+    - Map page (`body.spatial`) panels became `@neutral-mid-hover`; map buttons use `@accent`.
+    - Filter chips (`#view-opts .cancel`) and the "reset" button became `@neutral-mid`.
+    - Kept the hue-named mixins `.text-drk-grn()` / `.bg-light-grn()` (now gray) to avoid touching their call sites.
 
 - [ ] T7: Visual review
   - Files: none, or touch-ups in LESS

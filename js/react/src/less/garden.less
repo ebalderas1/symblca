@@ -45,9 +45,9 @@
 }
 
 .slider-handle, .tick-slider-selection, .in-selection {
-  background-image: linear-gradient(to bottom, @med-green 0, @deep-green 100%) !important;
-  background-image: -webkit-linear-gradient(top, @med-green 0, @deep-green 100%) !important;
-  background-image: -o-linear-gradient(top, @med-green 0, @deep-green 100%) !important;
+  background-image: linear-gradient(to bottom, @accent 0, @accent-hover 100%) !important;
+  background-image: -webkit-linear-gradient(top, @accent 0, @accent-hover 100%) !important;
+  background-image: -o-linear-gradient(top, @accent 0, @accent-hover 100%) !important;
 }
 */
 .dropdown-disabled,
@@ -90,12 +90,12 @@
 }
 
 #sidebar input::placeholder {
-  color: @placeholder-green;
+  color: @text-muted;
 }
 
 #canned-searches {
   height: 330px;
-  background: @light-green;
+  background: @bg-panel;
   margin: 0.3rem 0 1rem 0;
   padding: 1rem;
   @media (max-width: @small) {
@@ -111,7 +111,7 @@
     margin: 0 auto;
   }
   .card:hover {
-    background: @light-green !important;
+    background: @bg-panel !important;
   }
 
   .card a:hover {
@@ -120,14 +120,14 @@
 
   .canned-title {
     font-size: 0.9em;
-    color: @dark-green;
+    color: @text-heading;
     font-weight: 700;
     line-height: 1rem;
   }
 
   .card-text {
     font-weight: bold;
-    color: @dark-grn-type !important;
+    color: @text-strong !important;
     font-size: initial;
   }
 
@@ -136,21 +136,21 @@
   }
 
   .scroll-btn:active {
-    background: @green-tint !important;
+    background: @accent-tint !important;
   }
   .canned-wrapper {
     padding: 0 8px;
   }
 
   .canned-search-result {
-    color: @dark-green-alt !important;
-    background: @pale-green;
+    color: @accent !important;
+    background: @bg-panel;
     text-align: center;
     border-radius: 2%;
     max-width: 15em;
     .selected-indicator {
       display: none;
-      color: @med-green;
+      color: @accent;
     }
     .btn {
       font-size: 0.9rem;
@@ -161,10 +161,10 @@
       background-color: white;
 
       .card {
-        background-color: @light-green;
+        background-color: @bg-panel;
       }
       .btn-secondary {
-        border-color: @med-green !important;
+        border-color: @accent !important;
       }
       .selected-indicator {
         margin-top: -8px;
@@ -197,7 +197,7 @@ h2,
 h3,
 h4,
 h5 {
-  color: @dark-grn-type;
+  color: @text-strong;
 }
 .group-filter {
   .btn-primary.region {
@@ -210,7 +210,7 @@ h5 {
 a.external-link {
   //a -> fa
   padding-left: 5px;
-  color: @med-green !important;
+  color: @accent !important;
   fill: currentColor;
   svg {
     fill: currentColor;
@@ -231,7 +231,7 @@ a.external-link {
     .fa-2x {
       font-size: 2.3rem;
       padding-bottom: 13px;
-      color: @med-green;
+      color: @accent;
     }
   }
   @media (max-width: @medium) {
