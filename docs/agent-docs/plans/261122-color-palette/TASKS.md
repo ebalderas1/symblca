@@ -8,20 +8,21 @@ Tasks within a wave are independent; a wave starts only after the previous wave 
 
 ## Wave 1: Baseline
 
-- [ ] T1: Snapshot current compiled CSS
+- [x] T1: Snapshot current compiled CSS
   - Files: none committed; snapshot to a scratch directory
   - Do: From `js/react`, run the LESS build and copy `css/compiled/*.css` to a scratch folder as the baseline for later diffs. Take screenshots of the home page, a taxon profile, the identify key, an inventory page and a garden page for visual comparison.
   - Tests: build succeeds.
   - Done when: baseline CSS and screenshots exist and their location is noted in the Handoff.
-  - Progress (2026-11-22): CSS baseline done. Screenshots pending: no local site is running (port 80 serves the Apache default page; Docker is not installed in WSL). Screenshots are only needed from T5 on, because T2-T4 are checked by CSS diff. They can also be taken later from a `dev` checkout.
+  - Result (2026-11-22): CSS baseline and 9 screenshots saved; see the Handoff for location and how to re-take them.
 
 ## Wave 2: Consolidate (no visual change)
 
-- [ ] T2: Add missing variables to mixins.less
+- [x] T2: Add missing variables to mixins.less
   - Files: `js/react/src/less/mixins.less`
   - Do: Inventory every color literal in the LESS files (`grep -oiE '#[0-9a-f]{3,8}\b|rgba?\('`). For each value repeated 2+ times with no variable, add one (e.g. `#1b1b1b`, `#cfcac2`, `#288000`, `#000000a6`, `#9fd07a`, `#7abf46`, `#efffe3`). List near-duplicates (e.g. `#3b631d` vs `#3c641e`) in the Handoff for a user decision; do not merge them yet.
   - Tests: build succeeds.
   - Done when: every repeated color has a variable.
+  - Result (2026-11-22): added 13 variables. Every green-family literal got one, even if used once, because all of them must change in T6; repeated neutrals (`#1b1b1b`, `#cfcac2`, `#000000a6`) did too. The near-duplicate `#3b631d` got its own variable (`@dark-green-alt`) instead of a merge, since both it and `@dark-green` become `@accent` in T6. Build checksums match the baseline.
 
 - [ ] T3: Replace hardcoded colors in theme.less, header.less, search-results.less
   - Files: `js/react/src/less/theme.less`, `header.less`, `search-results.less`
