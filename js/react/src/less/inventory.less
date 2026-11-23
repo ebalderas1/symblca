@@ -364,7 +364,7 @@
               font-size: 2em;
               line-height: 2em;
               &:disabled {
-                color: #d7eac5;
+                color: @disabled-green;
               }
             }
             .rows-current {
@@ -823,8 +823,8 @@
       overflow-y: scroll;
       max-height: 80vh;
       --scrollbarBG: @med-green;
-      --thumbBG: #1b1b1b;
-      scrollbar-color: @med-green #1b1b1b;
+      --thumbBG: @near-black;
+      scrollbar-color: @med-green @near-black;
       h1,
       h2 {
         color: white;

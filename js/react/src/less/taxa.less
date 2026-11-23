@@ -58,7 +58,7 @@
   // Glossary word styling
   .glossary {
     cursor: pointer;
-    border-bottom: 1px dashed #3c641e;
+    border-bottom: 1px dashed @dark-green;
   }
 
   figure {
@@ -130,7 +130,7 @@
     .canned-search-result {
       flex-basis: 45%;
 
-      color: #3b631d !important;
+      color: @dark-green-alt !important;
       text-align: center;
       border-radius: 2%;
       max-width: 15em;
@@ -149,7 +149,7 @@
 
       .card-text {
         font-weight: bold;
-        color: #1e352f !important;
+        color: @dark-grn-type !important;
         font-size: initial;
       }
 
@@ -158,7 +158,7 @@
       }
 
       .scroll-btn:active {
-        background: rgba(0, 100, 0, 0.1) !important;
+        background: @green-tint !important;
       }
     }
   }
@@ -362,8 +362,8 @@
         height: 250px;
         overflow-y: scroll;
         background-color: white;
-        border-top: 2px solid #cfcac2;
-        border-left: 2px solid #cfcac2;
+        border-top: 2px solid @warm-gray;
+        border-left: 2px solid @warm-gray;
         padding: 1em;
         --scrollbarBG: @med-green;
         --thumbBG: white;
