@@ -17,18 +17,19 @@ Tasks within a wave are independent; a wave starts only after the previous wave 
 
 ## Wave 2: Consolidate (no visual change)
 
-- [x] T2: Add missing variables to mixins.less
+- [x] T2: Add missing variables to mixins.less (commit 7be2e8997)
   - Files: `js/react/src/less/mixins.less`
   - Do: Inventory every color literal in the LESS files (`grep -oiE '#[0-9a-f]{3,8}\b|rgba?\('`). For each value repeated 2+ times with no variable, add one (e.g. `#1b1b1b`, `#cfcac2`, `#288000`, `#000000a6`, `#9fd07a`, `#7abf46`, `#efffe3`). List near-duplicates (e.g. `#3b631d` vs `#3c641e`) in the Handoff for a user decision; do not merge them yet.
   - Tests: build succeeds.
   - Done when: every repeated color has a variable.
   - Result (2026-11-22): added 13 variables. Every green-family literal got one, even if used once, because all of them must change in T6; repeated neutrals (`#1b1b1b`, `#cfcac2`, `#000000a6`) did too. The near-duplicate `#3b631d` got its own variable (`@dark-green-alt`) instead of a merge, since both it and `@dark-green` become `@accent` in T6. Build checksums match the baseline.
 
-- [ ] T3: Replace hardcoded colors in theme.less, header.less, search-results.less
+- [x] T3: Replace hardcoded colors in theme.less, header.less, search-results.less
   - Files: `js/react/src/less/theme.less`, `header.less`, `search-results.less`
   - Do: Replace exact-match literals with the corresponding variable. Make sure `search-results.less` can resolve the variables (it is imported by `theme.less` after `mixins.less`; add an explicit import if the build fails).
   - Tests: build, then diff `css/compiled/theme.css` and `header.css` against the T1 baseline.
   - Done when: compiled CSS diff is empty or only reformatted equivalents.
+  - Result (2026-11-22): 25 replacements (theme 21, search-results 3, header 1). `rgba(60, 100, 30, 0.5)` became `fade(@dark-green, 50%)`. `search-results.less` needed no extra import. All 7 compiled files match the baseline checksums. Remaining literals are the intended neutrals and alert colors.
 
 - [ ] T4: Replace hardcoded colors in taxa, garden, rare, inventory LESS
   - Files: `js/react/src/less/taxa.less`, `garden.less`, `rare.less`, `inventory.less`

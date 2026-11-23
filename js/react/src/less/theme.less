@@ -99,7 +99,7 @@ li {
   .btn();
 
   color: white !important;
-  background-image: linear-gradient(#5fb021, #468019) !important;
+  background-image: linear-gradient(@med-green, @btn-gradient-green) !important;
   font-weight: 600;
   font-size: 14px;
   border: none;
@@ -281,7 +281,7 @@ img {
   padding: 0;
   margin-left: auto;
   border-radius: 50%;
-  background: #5fb021 !important;
+  background: @med-green !important;
 }
 /*
 .text-sentence {
@@ -375,12 +375,12 @@ img {
 			width: 21px;
 			height: 21px;
 			border-radius: 1em;
-			background-color: #5FB021;
-			border: 2px #DFEFD3 solid;
+			background-color: @med-green;
+			border: 2px @light-green solid;
 
 			&:before {
 				content: '\007C';
-				color: #7ABF46;
+				color: @divider-green;
 				z-index: 1;
 				display: block;
 				font-size: 19px;
@@ -392,7 +392,7 @@ img {
 			&:after {
 				content: '\007C \00A0 \00A0 \007C';
 				display: block;
-				color: #7ABF46;
+				color: @divider-green;
 				font-size: 13px;
 				top: -19px;
 				left: 5px;
@@ -640,7 +640,7 @@ img {
     }
 
     .store-item-purchase {
-      background-color: #dfefd3;
+      background-color: @light-green;
       min-height: 82px;
       padding: 18px 0;
 
@@ -668,7 +668,7 @@ img {
 
         img {
           padding-left: 10px;
-          background-color: #dfefd3;
+          background-color: @light-green;
           border-radius: 6px;
         }
       }
@@ -1033,7 +1033,7 @@ img {
           border-bottom: 1px dotted black;
           padding: 0.6rem 0;
           &:nth-child(even) {
-            background-color: #eff7e9;
+            background-color: @stripe-green;
           }
           a.anchor {
             display: block;
@@ -1572,7 +1572,7 @@ img {
           .slide-col-2 {
             padding: 10px 0px 0 13px;
             .link-card {
-              background: #000000a6 0% 0% no-repeat padding-box;
+              background: @black-65 0% 0% no-repeat padding-box;
               border-radius: 8px;
               opacity: 1;
               padding: 15px 10px;
@@ -1666,7 +1666,7 @@ img {
           }
 
           .video-card {
-            background: #000000a6 0% 0% no-repeat padding-box;
+            background: @black-65 0% 0% no-repeat padding-box;
             border-radius: 8px;
             padding: 5px;
             margin-bottom: 15px;
@@ -1715,7 +1715,7 @@ img {
           }
 
           .slide-col-1 {
-            background: #000000a6 0% 0% no-repeat padding-box;
+            background: @black-65 0% 0% no-repeat padding-box;
             border-radius: 8px;
             opacity: 1;
             padding: 20px;
@@ -1763,7 +1763,7 @@ img {
 
               .event-date {
                 padding: 10px;
-                background-color: #efffe3;
+                background-color: @pale-green;
                 border-top-left-radius: 8px;
                 border-bottom-left-radius: 8px;
                 color: @dark-gray;
@@ -1777,7 +1777,7 @@ img {
               }
               .event-desc {
                 padding: 10px;
-                background: #000000a6 0% 0% no-repeat padding-box;
+                background: @black-65 0% 0% no-repeat padding-box;
                 border-top-right-radius: 8px;
                 border-bottom-right-radius: 8px;
                 font-size: 1.125rem;
@@ -2290,7 +2290,7 @@ img {
     // Glossary word styling
     .glossary {
       cursor: pointer;
-      border-bottom: 1px dashed #3c641e;
+      border-bottom: 1px dashed @dark-green;
       font-size: 1em;
     }
   }
@@ -2582,9 +2582,9 @@ img {
       &.reset {
         display: inline-block;
         text-transform: uppercase;
-        background-color: #5fb021;
+        background-color: @med-green;
         color: white;
-        border: 1px solid #999999;
+        border: 1px solid @gray-type;
         max-height: none;
       }
     }
@@ -2623,8 +2623,8 @@ img {
       overflow-y: scroll;
       max-height: 80vh;
       --scrollbarBG: @med-green;
-      --thumbBG: #1b1b1b;
-      scrollbar-color: @med-green #1b1b1b;
+      --thumbBG: @near-black;
+      scrollbar-color: @med-green @near-black;
       h1,
       h2 {
         color: white;
@@ -2854,7 +2854,7 @@ img {
             display: block;
             background-color: white;
             padding: 0;
-            border: 1px solid #cfcac2;
+            border: 1px solid @warm-gray;
             margin-bottom: 2rem;
             padding: 2em;
             h2 {
@@ -3088,7 +3088,7 @@ body.spatial {
   }
   .ol-control {
     button {
-      background-color: rgba(60, 100, 30, 0.5) !important; //3C641E
+      background-color: fade(@dark-green, 50%) !important; //3C641E
     }
   }
   .ol-full-screen {
