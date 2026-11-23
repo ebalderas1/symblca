@@ -1405,8 +1405,11 @@ img {
     height: 3em;
   }
   .wrapper {
-    background-color: darkgreen;
-    background-image: url('@{subdir}/images/home.jpg');
+    background-color: @near-black;
+    // Dark overlay keeps the white hero text readable on the light lichen photo
+    background-image:
+      linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url('@{subdir}/images/home-lichens.jpg');
     background-repeat: no-repeat;
     background-position: center top;
     background-size: cover;

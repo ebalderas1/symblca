@@ -1,6 +1,6 @@
 # Tasks: Update the website color palette
 
-Status: in-progress
+Status: complete
 Plan: PLAN.md
 
 Mark a task `[x]` only when its "Done when" is met, and append the commit hash: `(commit abc1234)`.
@@ -64,10 +64,15 @@ Tasks within a wave are independent; a wave starts only after the previous wave 
     - Filter chips (`#view-opts .cancel`) and the "reset" button became `@neutral-mid`.
     - Kept the hue-named mixins `.text-drk-grn()` / `.bg-light-grn()` (now gray) to avoid touching their call sites.
 
-- [ ] T7: Visual review
+- [x] T7: Visual review (commit "Apply T7 review changes and lichen hero photo")
   - Files: none, or touch-ups in LESS
   - Do: Re-take the T1 screenshots and compare. Check hover, focus and active states, the mobile menu, and images/logos that carry the old color.
   - Tests: manual review with the user.
   - Done when: the user signs off.
+  - Decisions (user, 2026-11-22): go with the recommendations. Items 1-5 kept as is; item 6 `#about-guide-flip` → `@neutral-mid`; item 7 extend scope to the two variables in `css/symbiota/customizations.css` (`--oregonflora-green` → `#3c641e`, `--oregonflora-light-green` → `#f0efeb`, with a comment to keep them in sync with `mixins.less`). Addition: replace the home hero photo with the user's `Lichens.jpg` (4032x2268), resized with PHP GD to 2000x1125 q82 as `images/home-lichens.jpg` (620 KB, EXIF stripped). The `.wrapper` background in `theme.less` now layers a `rgba(0,0,0,0.5)` overlay over it for text readability, with fallback color `@near-black` instead of `darkgreen`. The old `images/home.jpg` is left in place but no longer referenced.
+  - Verification: build passes; re-shot home, home-mobile, rare, rare-mobile and map into `screenshots-after-t7/`; `compare.html` uses them. Mobile right-edge text cutoff is in the baseline too (pre-existing). User signed off 2026-11-22.
+  - Progress (2026-11-22): T6 committed as 743bde707. Before/after comparison page at `~/symblca-baselines/261122-color-palette/compare.html` (11 page pairs, incl. new `map` and `rare-mobile`; their "before" shots were taken by temporarily copying the baseline CSS into `css/compiled/`, then rebuilding). Waiting on the user for the T6 judgement calls plus two new findings:
+    - 6. Rare page "About This Guide" bar (`#about-guide-flip`, was `@med-dark-green`) is now a solid accent-green band; maybe `@neutral-mid` instead.
+    - 7. The map search page (`collections/map/index.php`) is unchanged: it is styled by `css/symbiota/customizations.css` (loaded via `includes/head.php` on Symbiota-based pages), which defines `--oregonflora-green: #74B147` and `--oregonflora-light-green: #dfefd3` (7 uses). Out of scope per the legacy decision, but it's a main-nav feature, so ask whether to extend scope to just those two variables. The `body.spatial` rules changed in T6 did not visibly affect this page.
 
 Out of scope (user decision, 2026-11-22): legacy Symbiota CSS (`css/main.css`, `css/base.css`, `css/speciesprofile.css`) keeps the old palette.

@@ -45,7 +45,9 @@ The block above is the pre-2026-11 green palette, kept for history. Since the `2
 ```
 Mixins: `.text-capitalize()`, `.text-italic()`, `.text-uppercase()`, `.text-bold()`, `.text-drk-grn()`, `.text-center()`, `.bg-light-grn()`, `.border-rounded-sm()`, `.border-rounded-med()`, `.dropdown-hover()`, `.dropdown-current()`, `.collapsed-header()`. Note: `.text-drk-grn()` and `.bg-light-grn()` kept their old names but now apply `@text-strong` and `@bg-panel` (gray, not green). Likewise the JSX class `.text-light-green` (used only on `h3` headings) now renders `@text-heading`.
 
-Palette colors live only in `mixins.less`; the other LESS files and JSX have no palette hex literals (only neutrals like white/black/gray and alert colors). Images are not covered: the header/hero fern photos, search magnifier icons and `images/garden/*ViewIcon-*.png` stay green.
+Palette colors live only in `mixins.less`; the other LESS files and JSX have no palette hex literals (only neutrals like white/black/gray and alert colors). Images are not covered: the header fern photo, search magnifier icons and `images/garden/*ViewIcon-*.png` stay green. The home hero (`.wrapper` in `theme.less`) uses `images/home-lichens.jpg` under a 50% black overlay so the white hero text stays readable.
+
+Symbiota-based pages (map search, collections, image library) are styled by `css/symbiota/customizations.css`, not by these LESS files. Its `--oregonflora-green` / `--oregonflora-light-green` variables are set to the same values as `@accent` / `@bg-panel` and must be updated by hand if the palette changes.
 
 ## PHP template -> compiled CSS mapping (verified by grepping `<link>` tags, not assumed from JS bundle names)
 | Page template | CSS loaded |

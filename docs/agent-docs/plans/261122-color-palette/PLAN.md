@@ -1,6 +1,6 @@
 # Plan: Update the website color palette
 
-Status: approved
+Status: complete
 Request: Update the color palette of the website.
 Spec: none
 
@@ -80,7 +80,9 @@ None.
 - Screenshots: take them from Windows with headless Edge launched through the PowerShell tool (`Start-Process msedge.exe -Wait` with `--headless=new --user-data-dir=<temp> --virtual-time-budget=8000 --window-size=W,H --screenshot=<png> <url>`). Launching Edge from Git Bash reported success but often didn't write the file.
 - How to verify phase 1: rebuild, then `cd ~/symblca/css/compiled && sha256sum -c ~/symblca-baselines/261122-color-palette/SHA256SUMS`. Run it from `css/compiled`; running it from the baseline folder compares the baseline with itself. All OK means no visual change. On a mismatch, split the new file with `sed 's/}/}\n/g'` and diff it against `css-readable/`.
 - Environment notes: run git and npm through WSL (`wsl.exe -d Ubuntu -- bash -s`). Windows Git refuses the `\\wsl.localhost` path (dubious ownership).
-- Next step: T7 visual review with the user; go through the "Judgement calls" list under T6 in TASKS.md. Also for T7, note that the garden/rare grid and list view toggles use green PNG icons (`images/garden/gridViewIcon-{dark,light}.png`, `listViewIcon-*.png`), and the header/hero use fern photos; those images won't follow the palette. Replacement rules used in T3/T4, for reference:
+- Final state (2026-11-22): all tasks T1-T7 complete and signed off by the user; plan closed. Branch `feature/color-palette` is ready for review/merge into `dev` (not merged or pushed).
+- Possible follow-ups (not planned): mobile home-page text overflows the right edge (pre-existing); hue-named mixins `.text-drk-grn()` / `.bg-light-grn()` and class `.text-light-green` could be renamed; green image assets (header fern photo, magnifier icons, garden view-toggle icons) don't follow the palette; unused `images/home.jpg` could be removed.
+- Scope change (2026-11-22): `css/symbiota/customizations.css` is now partly in scope (its two color variables only); the rest of the legacy Symbiota CSS still keeps the old palette. Also for T7, note that the garden/rare grid and list view toggles use green PNG icons (`images/garden/gridViewIcon-{dark,light}.png`, `listViewIcon-*.png`), and the header/hero use fern photos; those images won't follow the palette. Replacement rules used in T3/T4, for reference:
   - exact copies: `#5fb021`/`#5FB021` → `@med-green`, `#dfefd3`/`#DFEFD3` → `@light-green`, `#1e352f` → `@dark-grn-type`, `#3c641e` → `@dark-green`, `#999999` → `@gray-type`
   - T2 variables: see the block below `@ivory` in `mixins.less`
   - `rgba(60, 100, 30, 0.5)` (theme.less, OpenLayers buttons) is `@dark-green` at 50%; try `fade(@dark-green, 50%)` and confirm the checksum still matches
