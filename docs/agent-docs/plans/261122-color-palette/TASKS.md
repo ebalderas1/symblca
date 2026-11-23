@@ -1,0 +1,58 @@
+# Tasks: Update the website color palette
+
+Status: in-progress
+Plan: PLAN.md
+
+Mark a task `[x]` only when its "Done when" is met, and append the commit hash: `(commit abc1234)`.
+Tasks within a wave are independent; a wave starts only after the previous wave is complete.
+
+## Wave 1: Baseline
+
+- [ ] T1: Snapshot current compiled CSS
+  - Files: none committed; snapshot to a scratch directory
+  - Do: From `js/react`, run the LESS build and copy `css/compiled/*.css` to a scratch folder as the baseline for later diffs. Take screenshots of the home page, a taxon profile, the identify key, an inventory page and a garden page for visual comparison.
+  - Tests: build succeeds.
+  - Done when: baseline CSS and screenshots exist and their location is noted in the Handoff.
+  - Progress (2026-11-22): CSS baseline done. Screenshots pending: no local site is running (port 80 serves the Apache default page; Docker is not installed in WSL). Screenshots are only needed from T5 on, because T2-T4 are checked by CSS diff. They can also be taken later from a `dev` checkout.
+
+## Wave 2: Consolidate (no visual change)
+
+- [ ] T2: Add missing variables to mixins.less
+  - Files: `js/react/src/less/mixins.less`
+  - Do: Inventory every color literal in the LESS files (`grep -oiE '#[0-9a-f]{3,8}\b|rgba?\('`). For each value repeated 2+ times with no variable, add one (e.g. `#1b1b1b`, `#cfcac2`, `#288000`, `#000000a6`, `#9fd07a`, `#7abf46`, `#efffe3`). List near-duplicates (e.g. `#3b631d` vs `#3c641e`) in the Handoff for a user decision; do not merge them yet.
+  - Tests: build succeeds.
+  - Done when: every repeated color has a variable.
+
+- [ ] T3: Replace hardcoded colors in theme.less, header.less, search-results.less
+  - Files: `js/react/src/less/theme.less`, `header.less`, `search-results.less`
+  - Do: Replace exact-match literals with the corresponding variable. Make sure `search-results.less` can resolve the variables (it is imported by `theme.less` after `mixins.less`; add an explicit import if the build fails).
+  - Tests: build, then diff `css/compiled/theme.css` and `header.css` against the T1 baseline.
+  - Done when: compiled CSS diff is empty or only reformatted equivalents.
+
+- [ ] T4: Replace hardcoded colors in taxa, garden, rare, inventory LESS
+  - Files: `js/react/src/less/taxa.less`, `garden.less`, `rare.less`, `inventory.less`
+  - Do: Same as T3.
+  - Tests: build and diff against the baseline.
+  - Done when: compiled CSS diff is empty.
+
+- [ ] T5: Move JSX inline colors to LESS
+  - Files: `js/react/src/common/iconButton.jsx`, `js/react/src/common/filterSidebar.jsx`, `js/react/src/identify/sidebar.jsx`, plus the matching LESS file
+  - Do: Move inline `color` / `backgroundColor` literals into class rules that use variables, unless the color is computed at runtime.
+  - Tests: `npm run build` from `js/react`; visual check against T1 screenshots.
+  - Done when: no hardcoded palette colors remain in JSX.
+
+## Wave 3: Rename and swap palette
+
+- [ ] T6: Introduce role variables and migrate call sites
+  - Files: `js/react/src/less/mixins.less` and every LESS file that uses the old variables
+  - Do: Add the role variables from the PLAN.md table with their new values. Replace each old variable use with its role variable. For `@dark-green`, `@med-green` and `@med-dark-green`, decide per use site whether it is an accent (links, primary buttons) or neutral (headings, borders, secondary buttons, icons), and list any unclear cases in the Handoff. Pick an `@accent-hover` value darker than `#3c641e`. Remove the old variables once nothing references them, and update the variable list in `docs/agent-docs/react-less.md`.
+  - Tests: build (an undefined variable fails the LESS build); check text/background pairs against WCAG AA.
+  - Done when: no old variable names remain (`grep -rE '@(light-green|med-green|med-dark-green|dark-green|dark-grn-type|dark-gray|gray-type|type-primary|ivory)\b' js/react/src/less` is empty), all 7 compiled CSS files are rebuilt, and contrast checks pass.
+
+- [ ] T7: Visual review
+  - Files: none, or touch-ups in LESS
+  - Do: Re-take the T1 screenshots and compare. Check hover, focus and active states, the mobile menu, and images/logos that carry the old color.
+  - Tests: manual review with the user.
+  - Done when: the user signs off.
+
+Out of scope (user decision, 2026-11-22): legacy Symbiota CSS (`css/main.css`, `css/base.css`, `css/speciesprofile.css`) keeps the old palette.
