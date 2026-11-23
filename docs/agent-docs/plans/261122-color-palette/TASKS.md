@@ -50,7 +50,7 @@ Tasks within a wave are independent; a wave starts only after the previous wave 
 
 ## Wave 3: Rename and swap palette
 
-- [x] T6: Introduce role variables and migrate call sites
+- [x] T6: Introduce role variables and migrate call sites (commit 743bde707)
   - Files: `js/react/src/less/mixins.less` and every LESS file that uses the old variables
   - Do: Add the role variables from the PLAN.md table with their new values. Replace each old variable use with its role variable. For `@dark-green`, `@med-green` and `@med-dark-green`, decide per use site whether it is an accent (links, primary buttons) or neutral (headings, borders, secondary buttons, icons), and list any unclear cases in the Handoff. Pick an `@accent-hover` value darker than `#3c641e`. Remove the old variables once nothing references them, and update the variable list in `docs/agent-docs/react-less.md`.
   - Tests: build (an undefined variable fails the LESS build); check text/background pairs against WCAG AA.
@@ -64,7 +64,7 @@ Tasks within a wave are independent; a wave starts only after the previous wave 
     - Filter chips (`#view-opts .cancel`) and the "reset" button became `@neutral-mid`.
     - Kept the hue-named mixins `.text-drk-grn()` / `.bg-light-grn()` (now gray) to avoid touching their call sites.
 
-- [x] T7: Visual review (commit "Apply T7 review changes and lichen hero photo")
+- [x] T7: Visual review (commit 935d2f77a)
   - Files: none, or touch-ups in LESS
   - Do: Re-take the T1 screenshots and compare. Check hover, focus and active states, the mobile menu, and images/logos that carry the old color.
   - Tests: manual review with the user.
