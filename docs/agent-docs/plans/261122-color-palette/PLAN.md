@@ -73,13 +73,14 @@ None.
 
 - Last session: 2026-11-22
 - Branch: `feature/color-palette` (from `dev` at `a587c3192`)
-- Current state: T1-T4 done. All LESS files use variables for palette colors; compiled CSS still matches the baseline.
+- Current state: T1-T5 done (phase 1 complete). All palette colors in LESS and JSX go through `mixins.less` variables. Compiled CSS matches the baseline except for 3 expected rules in `theme.css` from T5; screenshots are pixel-identical.
+- Baseline note: after T5, `theme.css` no longer matches the baseline checksum by design. Phase 2 changes colors anyway, so use screenshots from here on.
 - Baseline: `~/symblca-baselines/261122-color-palette/` in WSL (outside the repo, because `css/compiled/` is gitignored). It holds `css/` (raw minified build output), `css-readable/` (one rule per line, for diffing), `SHA256SUMS`, `SOURCE_COMMIT` and `screenshots/` (9 PNGs: home, home-mobile, taxa, search, ident-key, projects, garden, rare, checklist). Built with `npm run build` from `js/react`, run inside WSL.
 - Local site: native Apache + PHP 8.5 + MariaDB in WSL serves `http://localhost/symblca/` (`$CLIENT_ROOT = '/symblca'`). The DB is nearly empty (6 taxa, no checklists), so pages are mostly shells; the garden page's "An error occurred" box is caused by the empty DB, not by this work.
 - Screenshots: take them from Windows with headless Edge launched through the PowerShell tool (`Start-Process msedge.exe -Wait` with `--headless=new --user-data-dir=<temp> --virtual-time-budget=8000 --window-size=W,H --screenshot=<png> <url>`). Launching Edge from Git Bash reported success but often didn't write the file.
 - How to verify phase 1: rebuild, then `cd ~/symblca/css/compiled && sha256sum -c ~/symblca-baselines/261122-color-palette/SHA256SUMS`. Run it from `css/compiled`; running it from the baseline folder compares the baseline with itself. All OK means no visual change. On a mismatch, split the new file with `sed 's/}/}\n/g'` and diff it against `css-readable/`.
 - Environment notes: run git and npm through WSL (`wsl.exe -d Ubuntu -- bash -s`). Windows Git refuses the `\\wsl.localhost` path (dubious ownership).
-- Next step: T5 (inline colors in `iconButton.jsx`, `filterSidebar.jsx`, `identify/sidebar.jsx`); verify by screenshot comparison, since JSX changes do not show up in the CSS checksums. Replacement rules used in T3/T4, for reference:
+- Next step: T6 (role variables + new values). For T7, note that the garden/rare grid and list view toggles use green PNG icons (`images/garden/gridViewIcon-{dark,light}.png`, `listViewIcon-*.png`), and the header/hero use fern photos; those images won't follow the palette. Replacement rules used in T3/T4, for reference:
   - exact copies: `#5fb021`/`#5FB021` → `@med-green`, `#dfefd3`/`#DFEFD3` → `@light-green`, `#1e352f` → `@dark-grn-type`, `#3c641e` → `@dark-green`, `#999999` → `@gray-type`
   - T2 variables: see the block below `@ivory` in `mixins.less`
   - `rgba(60, 100, 30, 0.5)` (theme.less, OpenLayers buttons) is `@dark-green` at 50%; try `fade(@dark-green, 50%)` and confirm the checksum still matches

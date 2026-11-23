@@ -685,7 +685,6 @@ class IdentifyApp extends React.Component {
                 <SideBar
                   clid={this.state.clid}
                   dynclid={this.state.dynclid}
-                  style={{ background: '#DFEFD3' }}
                   isLoading={this.state.isLoading}
                   clientRoot={this.props.clientRoot}
                   totals={this.state.totals}

@@ -2162,11 +2162,21 @@ img {
   }
 }
 
+// !important matches the precedence these colors had as inline styles in iconButton.jsx
+.fake-button.icon-button-selected {
+  background: @light-green !important;
+  color: @dark-green-alt !important;
+}
+.fake-button.icon-button-unselected {
+  color: @placeholder-green !important;
+}
+
 .explore,
 .identify,
 #react-garden,
 #react-rare {
   #sidebar {
+    background: @light-green;
     font-size: 0.9rem;
     padding-bottom: 1em;
     h3 {

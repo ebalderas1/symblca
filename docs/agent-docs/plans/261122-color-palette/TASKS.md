@@ -31,18 +31,22 @@ Tasks within a wave are independent; a wave starts only after the previous wave 
   - Done when: compiled CSS diff is empty or only reformatted equivalents.
   - Result (2026-11-22): 25 replacements (theme 21, search-results 3, header 1). `rgba(60, 100, 30, 0.5)` became `fade(@dark-green, 50%)`. `search-results.less` needed no extra import. All 7 compiled files match the baseline checksums. Remaining literals are the intended neutrals and alert colors.
 
-- [x] T4: Replace hardcoded colors in taxa, garden, rare, inventory LESS
+- [x] T4: Replace hardcoded colors in taxa, garden, rare, inventory LESS (commit be47c0a4f)
   - Files: `js/react/src/less/taxa.less`, `garden.less`, `rare.less`, `inventory.less`
   - Do: Same as T3.
   - Tests: build and diff against the baseline.
   - Done when: compiled CSS diff is empty.
   - Result (2026-11-22): 21 replacements (garden 10, taxa 6, inventory 3, rare 2). All 7 compiled files match the baseline checksums. No palette-colored literals remain in any LESS file outside `mixins.less`.
 
-- [ ] T5: Move JSX inline colors to LESS
+- [x] T5: Move JSX inline colors to LESS
   - Files: `js/react/src/common/iconButton.jsx`, `js/react/src/common/filterSidebar.jsx`, `js/react/src/identify/sidebar.jsx`, plus the matching LESS file
   - Do: Move inline `color` / `backgroundColor` literals into class rules that use variables, unless the color is computed at runtime.
   - Tests: `npm run build` from `js/react`; visual check against T1 screenshots.
   - Done when: no hardcoded palette colors remain in JSX.
+  - Result (2026-11-22): the original file list was partly wrong. `filterSidebar.jsx` and `identify/sidebar.jsx` only use black/white (left as is). A full search of `js/react/src` found palette colors in:
+    - `common/iconButton.jsx`: selected/unselected inline colors replaced by classes `icon-button-selected` / `icon-button-unselected` in `theme.less`, using `!important` to keep the precedence the inline styles had.
+    - `style={{ background: '#DFEFD3' }}` on the sidebar in `explore.jsx`, `explore-vendor.jsx`, `identify.jsx` and `checklist-special/main.jsx`: removed; `background: @light-green` added to the existing `.explore, .identify, #react-garden, #react-rare { #sidebar }` rule, which covers all four pages. All four call sites passed this style, so no sidebar gains a background it didn't have.
+  - Verification: `theme.css` diff vs. baseline is exactly the 3 expected rules; the other 6 compiled files match. Screenshots of ident-key, garden, rare, checklist, projects and home are pixel-identical to the baseline. The garden/rare sort and view buttons (`IconButton`) only render with search results, which the empty local DB doesn't produce, so that change is verified by CSS only; check it in T7 if data is available.
 
 ## Wave 3: Rename and swap palette
 

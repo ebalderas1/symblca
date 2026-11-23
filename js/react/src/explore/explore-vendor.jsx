@@ -877,7 +877,6 @@ class ExploreApp extends React.Component {
               {
                 <SideBarVendor
                   clid={GARDEN_CLID}
-                  style={{ background: '#DFEFD3' }}
                   isLoading={this.state.isLoading}
                   clientRoot={this.props.clientRoot}
                   totals={this.state.totals}

@@ -545,7 +545,6 @@ class SpecialChecklistApp extends React.Component {
             <div className="col-md-4">
               <SideBar
                 clid={this.state.clid}
-                style={{ background: '#DFEFD3' }}
                 isLoading={this.state.isLoading}
                 clientRoot={this.props.clientRoot}
                 characteristics={this.state.characteristics}
