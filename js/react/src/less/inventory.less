@@ -17,7 +17,7 @@
   }
 
   .verticalSeparator {
-    border-right: 1px dotted @dark-gray;
+    border-right: 1px dotted @text-dark;
     margin: 0 0.5em;
   }
 
@@ -30,13 +30,13 @@
     .project-item {
       clear: both;
       margin-bottom: 1.7em;
-      border: 1px dotted @dark-gray;
+      border: 1px dotted @text-dark;
       border-radius: 0.5em;
 
       .project-header {
         border-top-left-radius: 0.5em;
         border-top-right-radius: 0.5em;
-        background-color: @light-green;
+        background-color: @bg-panel;
         padding: 0.5em 0.5em 0.8em 0.5em;
         margin-left: 0;
         margin-right: 0;
@@ -57,7 +57,7 @@
         }
       }
       .project-other {
-        background-color: @light-green;
+        background-color: @bg-panel;
       }
       .project-content {
         padding: 1.3rem 6.3rem;
@@ -161,14 +161,14 @@
         position: absolute;
         bottom: 15px;
         right: 20px;
-        border: 2px solid @light-green;
+        border: 2px solid @bg-panel;
         font-size: 16px;
         padding: 8px 10px;
       }
       .more-less {
         float: right;
         font-size: 14px;
-        color: @med-green;
+        color: @accent;
         text-transform: uppercase;
         margin-top: 10px;
         margin-right: 10px;
@@ -205,7 +205,7 @@
 
     h3 {
       display: inline-block;
-      color: @med-green;
+      color: @text-heading;
       font-weight: 600;
       font-size: 2rem;
       margin-right: 0.3em;
@@ -230,11 +230,11 @@
     }
     .project-key {
       .fa-list-ul {
-        color: @med-green;
+        color: @accent;
       }
 
       .project-icons {
-        background: @light-green;
+        background: @bg-panel;
         display: inline-block;
         padding: 7px 12px;
         border-radius: 0.25rem;
@@ -263,7 +263,7 @@
     }
     .checklists-table {
       .table-header {
-        background-color: @light-green;
+        background-color: @bg-panel;
         display: flex;
         flex-flow: row nowrap;
         padding: 0.6em;
@@ -277,8 +277,8 @@
           /*width: 55%;*/
 
           input {
-            color: @med-green;
-            border-color: @med-green;
+            color: @text-strong;
+            border-color: @neutral-mid;
             border-style: solid;
             font-size: 1.4rem;
             width: 92%;
@@ -286,11 +286,11 @@
             border-radius: 6px;
             line-height: 2em;
             &::placeholder {
-              color: @med-green;
+              color: @text-muted;
             }
           }
           .fa-times-circle {
-            color: @med-green;
+            color: @neutral-mid;
             margin-left: 0.5em;
             font-size: 1.5rem;
           }
@@ -318,7 +318,7 @@
             width: 40%;
             padding-top: 0.3em;
             button {
-              color: @med-green;
+              color: @accent;
               background-color: transparent;
               padding: 0;
               vertical-align: top;
@@ -358,13 +358,13 @@
             flex-flow: row wrap;
             text-align: center;
             button {
-              color: @med-green;
+              color: @accent;
               padding: 0 !important;
               flex-basis: 33%;
               font-size: 2em;
               line-height: 2em;
               &:disabled {
-                color: #d7eac5;
+                color: @warm-gray;
               }
             }
             .rows-current {
@@ -411,7 +411,7 @@
         width: 100%;
 
         tr {
-          border-bottom: 1px dotted @dark-gray;
+          border-bottom: 1px dotted @text-dark;
 
           td {
             padding: 0.6em 0;
@@ -427,7 +427,7 @@
             text-align: right;
 
             a {
-              background: @light-green;
+              background: @bg-panel;
               padding: 6px 12px;
               border-radius: 4px;
               svg {
@@ -437,7 +437,7 @@
             }
 
             .fa-list-ul {
-              color: @med-green;
+              color: @accent;
             }
           }
         }
@@ -451,7 +451,7 @@
         a,
         button {
           text-transform: uppercase;
-          color: @med-green!important;
+          color: @accent!important;
           padding: 0;
 
           &:disabled {
@@ -491,7 +491,7 @@
       flex-flow: row nowrap;
     }
     input:disabled + label {
-      color: @gray-type;
+      color: @text-muted;
     }
     .view-opt-wrapper {
       label {
@@ -518,7 +518,7 @@
   }
   .inventory-main {
     hr {
-      border-top: 4px solid @med-green!important;
+      border-top: 4px solid @neutral-mid!important;
       width: 100%;
       margin: 0px 15px 10px 15px;
     }
@@ -527,7 +527,7 @@
       position: relative;
       h4 {
         text-transform: uppercase;
-        color: @dark-green;
+        color: @text-heading;
         font-size: 24px;
         font-weight: bold;
       }
@@ -584,7 +584,7 @@
     flex-flow: row wrap;
     justify-content: space-between;
     padding-bottom: 0.4em;
-    border-bottom: 3px solid @light-green;
+    border-bottom: 3px solid @bg-panel;
     margin-top: 0.75em;
     .btn-primary {
       background-image: none !important;
@@ -602,7 +602,7 @@
       }
 
       .btn-primary {
-        background-color: @med-green!important;
+        background-color: @accent!important;
         height: 55px;
         width: 178px;
         min-width: 178px;
@@ -619,14 +619,14 @@
         background-color: #b0b0b0 !important;
         font-size: 0.875rem;
         &.alt-button:hover {
-          background: @med-green !important;
+          background: @accent !important;
         }
       }
     }
     &.identify-header {
       .current-wrapper {
         .btn-primary {
-          background-color: @dark-grn-type !important;
+          background-color: @text-strong !important;
         }
       }
     }
@@ -635,10 +635,10 @@
     .family-group {
       padding-bottom: 1em;
       margin-bottom: 1em;
-      border-bottom: 1px dotted @dark-green;
+      border-bottom: 1px dotted @neutral-mid;
     }
     svg.fa-square {
-      color: @med-green;
+      color: @accent;
     }
     .grid-result {
       span.sci-name,
@@ -677,7 +677,7 @@
   }
   .more-less {
     text-transform: uppercase;
-    color: @med-green;
+    color: @accent;
     margin-bottom: 20px;
 
     svg {
@@ -714,7 +714,7 @@
         text-align: right;
       }
       &.editing.less {
-        color: @dark-green;
+        color: @accent;
       }
     }
     h2 {
@@ -742,7 +742,7 @@
       width: 100px;
       &.updating {
         background-image: white;
-        color: @med-green !important;
+        color: @accent !important;
       }
     }
 
@@ -773,7 +773,7 @@
       margin: 0 0 0.8em 8px;
       &.updating {
         background-image: white;
-        color: @med-green !important;
+        color: @accent !important;
       }
     }
   }
@@ -796,16 +796,16 @@
     padding: 10px 0;
     margin: 1rem 10px;
     &.display {
-      background-color: @light-green-alpha;
-      color: @med-green;
-      //border-color: @dark-green;
+      background-color: @bg-panel-alpha;
+      color: @accent;
+      //border-color: @accent;
     }
   }
   .taxa-delete {
     margin-left: 4px;
     a {
       background-color: transparent;
-      color: @med-green !important;
+      color: @accent !important;
       width: auto;
       padding: 6px 2px;
     }
@@ -822,9 +822,9 @@
       margin-top: 3em;
       overflow-y: scroll;
       max-height: 80vh;
-      --scrollbarBG: @med-green;
-      --thumbBG: #1b1b1b;
-      scrollbar-color: @med-green #1b1b1b;
+      --scrollbarBG: @neutral-mid;
+      --thumbBG: @near-black;
+      scrollbar-color: @neutral-mid @near-black;
       h1,
       h2 {
         color: white;
@@ -857,7 +857,7 @@
         width: 100%;
         .btn-primary {
           background-image: none !important;
-          background-color: @med-green!important;
+          background-color: @accent!important;
           min-height: 45px;
           min-width: 178px;
           font-size: 1.2rem;
@@ -869,17 +869,17 @@
           font-size: 60px;
           font-weight: 700;
           margin-bottom: 0;
-          color: @med-green;
+          color: @text-heading;
         }
         .close-modal {
           flex-basis: 20%;
-          color: @med-green;
+          color: @neutral-mid;
           text-align: right;
         }
         .file-upload {
           flex-basis: 100%;
           padding-top: 2rem;
-          color: @type-primary;
+          color: @text-primary;
           display: flex;
           flex-flow: row nowrap;
           justify-content: space-between;
@@ -934,7 +934,7 @@
           table,
           th,
           td {
-            border: 1px solid @ivory;
+            border: 1px solid @bg-page;
             border-collapse: collapse;
           }
           table {
@@ -954,7 +954,7 @@
               &.code {
                 width: percentage(118/1015);
                 &.accepted {
-                  color: @med-green;
+                  color: @accent;
                 }
                 &.synonym,
                 &.duplicate {

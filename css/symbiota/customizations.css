@@ -43,9 +43,9 @@ This stylesheet is defined last and will override all previously loaded sheets. 
   --body-bg-color: #ffffff;
   --max-innertext-width: 1100px;
 
-  /* Green color used for buttons, footer, etc on OregonFlora */
-  --oregonflora-green: #74B147;
-  --oregonflora-light-green: #dfefd3;
+  /* Accent and panel colors; keep in sync with @accent / @bg-panel in js/react/src/less/mixins.less */
+  --oregonflora-green: #3c641e;
+  --oregonflora-light-green: #f0efeb;
 
   /* Use these fonts instead of Open Sans */
   --body-font-family: "Arial", sans-serif;

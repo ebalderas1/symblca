@@ -7,19 +7,12 @@ library.add(faTimesCircle);
 
 class IconButton extends React.Component {
   render() {
-    const selectedStyle = {
-      background: '#DFEFD3',
-      color: '#3B631D',
-    };
-
-    const unselectedStyle = {
-      color: '#9FD07A',
-    };
+    const stateClass = this.props.isSelected ? 'icon-button-selected' : 'icon-button-unselected';
 
     return (
       <span
-        className="fake-button align-middle justify-content-center"
-        style={Object.assign({}, this.props.isSelected ? selectedStyle : unselectedStyle, this.props.style)}
+        className={`fake-button align-middle justify-content-center ${stateClass}`}
+        style={this.props.style}
         onClick={this.props.onClick}
       >
         <img

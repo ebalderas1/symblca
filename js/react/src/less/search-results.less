@@ -18,7 +18,7 @@
     background: transparent;
   }
   25%, 75% {
-    background: #dfefd3; // matches :hover color
+    background: @bg-panel; // matches :hover color
   }
 }
 
@@ -33,7 +33,7 @@
   box-shadow: 0 0.1em 0.3em 0.1em hsla(0, 0%, 0%, 0.25);
   @media (hover: hover) {
     &:hover {
-      background: #dfefd3 !important;
+      background: @bg-panel !important;
     }
   }
   // Applied when a new plant is added via updateSPP; blinks twice to draw attention
@@ -55,7 +55,7 @@
   .card-text,
   .canned-title {
     font-weight: bold;
-    color: #1e352f !important;
+    color: @text-strong !important;
     font-size: initial;
   }
   .card-text {

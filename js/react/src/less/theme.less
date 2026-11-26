@@ -37,10 +37,10 @@ button {
 }
 
 a {
-  color: @type-primary !important;
+  color: @text-primary !important;
 
   &:active {
-    color: @dark-green !important;
+    color: @accent-hover !important;
   }
 }
 
@@ -99,7 +99,7 @@ li {
   .btn();
 
   color: white !important;
-  background-image: linear-gradient(#5fb021, #468019) !important;
+  background-image: linear-gradient(@accent, @accent-hover) !important;
   font-weight: 600;
   font-size: 14px;
   border: none;
@@ -109,7 +109,7 @@ li {
   line-height: 16px;
 
   &:active {
-    color: @dark-green !important;
+    color: @accent !important;
     opacity: 90%;
   }
   &.pdf {
@@ -139,7 +139,7 @@ li {
 
   .text-drk-grn();
   background: none !important;
-  border: 2px solid @light-green !important;
+  border: 2px solid @bg-panel !important;
   font-weight: bold;
   border-radius: 0.5em;
   cursor: pointer;
@@ -150,7 +150,7 @@ li {
   }
 
   &:active:enabled {
-    background: @med-green !important;
+    background: @accent !important;
     opacity: 90%;
   }
 }
@@ -178,11 +178,11 @@ img {
 
 .navbar-toggler,
 .dropdown-menu {
-  background-color: @med-green;
+  background-color: @neutral-mid;
 }
 
 .navbar-toggler:hover {
-  background-color: @med-green;
+  background-color: @neutral-mid;
 }
 
 .dropdown-toggle.nav-link {
@@ -219,7 +219,7 @@ img {
   border-radius: 0 0 0.4em 0.4em;
   padding: 0;
   a {
-    color: @ivory !important;
+    color: @bg-page !important;
     font-size: 16px;
     line-height: 30px;
     padding: 0 1.5rem;
@@ -248,14 +248,14 @@ img {
     box-shadow: none !important;
     &:focus,
     &:active {
-      border-color: @med-green;
+      border-color: @accent;
     }
   }
   .clear-text {
     position: absolute;
     top: 10px;
     left: 67%;
-    color: @gray-type !important;
+    color: @text-muted !important;
     transition: color 100ms;
     padding: 0 0 0 3px;
     background-color: white;
@@ -264,9 +264,9 @@ img {
     }
     svg {
       font-size: 1.5rem;
-      color: @gray-type !important;
+      color: @text-muted !important;
       * {
-        color: @gray-type !important;
+        color: @text-muted !important;
       }
     }
   }
@@ -281,7 +281,7 @@ img {
   padding: 0;
   margin-left: auto;
   border-radius: 50%;
-  background: #5fb021 !important;
+  background: @accent !important;
 }
 /*
 .text-sentence {
@@ -330,7 +330,7 @@ img {
 
 .back-to-top {
   cursor: pointer;
-  color: @med-green !important;
+  color: @accent !important;
   span.back-to-top-label {
     display: block;
     text-align: center;
@@ -355,9 +355,9 @@ img {
     margin-top: 1rem;
     height: 26px;
     .bp5-slider-progress {
-      background-color: @light-green;
+      background-color: @bg-panel;
       &.bp5-intent-primary {
-        background-color: @med-green;
+        background-color: @accent;
       }
     }
     .bp5-slider-axis {
@@ -366,21 +366,21 @@ img {
       }
     }
     .bp5-slider-handle {
-      background-color: @med-green;
+      background-color: @accent;
       background-image: none;
       box-shadow: none;
-      //border: 1px solid @light-green;
+      //border: 1px solid @bg-panel;
       //box-shadow: 0 0 0 1px rgb(255 255 255 / 20%), 0 1px 1px rgb(255 255 255 / 20%);
       /*
 			width: 21px;
 			height: 21px;
 			border-radius: 1em;
-			background-color: #5FB021;
-			border: 2px #DFEFD3 solid;
+			background-color: @accent;
+			border: 2px @bg-panel solid;
 
 			&:before {
 				content: '\007C';
-				color: #7ABF46;
+				color: @accent-divider;
 				z-index: 1;
 				display: block;
 				font-size: 19px;
@@ -392,7 +392,7 @@ img {
 			&:after {
 				content: '\007C \00A0 \00A0 \007C';
 				display: block;
-				color: #7ABF46;
+				color: @accent-divider;
 				font-size: 13px;
 				top: -19px;
 				left: 5px;
@@ -401,9 +401,9 @@ img {
 			}
 			*/
       .bp5-slider-label {
-        background-color: @light-green;
+        background-color: @bg-panel;
         transform: translate(-50%, -24px);
-        color: @dark-grn-type;
+        color: @text-strong;
         box-shadow: none;
         font-size: 0.9rem !important;
         padding: 2px 4px;
@@ -640,7 +640,7 @@ img {
     }
 
     .store-item-purchase {
-      background-color: #dfefd3;
+      background-color: @bg-panel;
       min-height: 82px;
       padding: 18px 0;
 
@@ -668,7 +668,7 @@ img {
 
         img {
           padding-left: 10px;
-          background-color: #dfefd3;
+          background-color: @bg-panel;
           border-radius: 6px;
         }
       }
@@ -680,8 +680,8 @@ img {
     }
 
     section {
-      background-color: @light-green;
-      border: 1px dashed @gray-type;
+      background-color: @bg-panel;
+      border: 1px dashed @text-muted;
       border-radius: 8px;
       padding: 1.6rem;
       margin-bottom: 2.2rem;
@@ -707,7 +707,7 @@ img {
           .more-link {
             float: right;
             text-transform: uppercase;
-            color: @med-green;
+            color: @accent;
             cursor: pointer;
             line-height: 1.8rem;
             .arrow {
@@ -753,9 +753,9 @@ img {
         background-color: white;
         max-height: 300px;
         overflow-y: scroll;
-        --scrollbarBG: @med-green;
+        --scrollbarBG: @neutral-mid;
         --thumbBG: white;
-        scrollbar-color: @med-green white;
+        scrollbar-color: @neutral-mid white;
       }
     }
     /*
@@ -769,7 +769,7 @@ img {
       }
 
       a {
-        color: @dark-green;
+        color: @accent;
         font-size: 11px;
       }
 
@@ -806,7 +806,7 @@ img {
       z-index: 999;
       font-size: 2rem;
       font-weight: normal;
-      color: @dark-green;
+      color: @neutral-mid;
       opacity: 1;
     }
   }
@@ -852,7 +852,7 @@ img {
     }
 
     .events-col {
-      background-color: @light-green;
+      background-color: @bg-panel;
       padding: 1em 2em;
       border-left: 1px dashed black;
       .event-item {
@@ -864,7 +864,7 @@ img {
           font-size: 22px;
           line-height: 22px;
           font-weight: bold;
-          color: @dark-green;
+          color: @text-heading;
           margin: 0;
           padding: 12px;
         }
@@ -967,7 +967,7 @@ img {
 .info-page {
   &.page2022 {
     //catchall for this set of new pages
-    color: @dark-grn-type;
+    color: @text-strong;
     p {
       font-size: 26px;
       line-height: 30px;
@@ -1029,11 +1029,11 @@ img {
           justify-content: space-between;
           align-items: center;
           margin-bottom: 0;
-          background-color: @light-green;
+          background-color: @bg-panel;
           border-bottom: 1px dotted black;
           padding: 0.6rem 0;
           &:nth-child(even) {
-            background-color: #eff7e9;
+            background-color: @bg-page;
           }
           a.anchor {
             display: block;
@@ -1055,7 +1055,7 @@ img {
             flex-basis: percentage(495/705);
             font-size: 26px;
             line-height: 30px;
-            color: @dark-grn-type;
+            color: @text-strong;
             font-weight: bold;
             a {
               text-decoration: none;
@@ -1068,13 +1068,13 @@ img {
               margin-top: 0;
               background-color: transparent;
               border: 2px solid white !important;
-              color: @dark-green !important;
+              color: @accent !important;
               border-radius: 6px;
               text-transform: uppercase;
               transition: border-color 200ms;
               text-decoration: none;
               &:hover {
-                border-color: @med-green !important;
+                border-color: @accent !important;
               }
             }
           }
@@ -1085,9 +1085,9 @@ img {
       margin-top: 0;
       margin-bottom: 1rem;
       padding: 1rem;
-      background-color: @light-green;
+      background-color: @bg-panel;
       h3 {
-        color: @med-green;
+        color: @text-heading;
         margin-top: 0;
       }
       ul {
@@ -1155,7 +1155,7 @@ img {
         }
       }
       .access {
-        background-color: @light-green;
+        background-color: @bg-panel;
         border-radius: 8px;
         border: 5px solid transparent;
         padding: 1rem;
@@ -1188,7 +1188,7 @@ img {
           padding-top: 0;
         }
         &.search {
-          background-color: @light-green;
+          background-color: @bg-panel;
           border-radius: 8px;
           border: 5px solid transparent;
           p,
@@ -1203,9 +1203,9 @@ img {
             margin-bottom: 1rem;
             //max-width: 350px !important;
             height: 40px;
-            border: 2px solid @med-green;
+            border: 2px solid @neutral-mid;
             //display: inline;
-            color: @med-green;
+            color: @text-strong;
             padding: 0.375rem 0.75rem;
             font-size: 1rem;
             font-weight: 400;
@@ -1225,11 +1225,11 @@ img {
   &.flora-of-oregon {
     #column-main {
       .updates {
-        border: 5px solid @light-green;
+        border: 5px solid @bg-panel;
         border-top-left-radius: 8px;
         border-top-right-radius: 8px;
         h3 {
-          color: @med-green;
+          color: @text-heading;
           font-size: 22px;
           line-height: 23px;
         }
@@ -1259,7 +1259,7 @@ img {
         }
       }
       .volumes {
-        background-color: @light-green;
+        background-color: @bg-panel;
         border: 1px dashed black;
         border-radius: 6px;
         text-align: center;
@@ -1328,7 +1328,7 @@ img {
     #column-right {
       .sidebox {
         &.sponsor {
-          background-color: @light-green;
+          background-color: @bg-panel;
           border-radius: 8px;
           border: 5px solid transparent;
           h3 {
@@ -1405,8 +1405,11 @@ img {
     height: 3em;
   }
   .wrapper {
-    background-color: darkgreen;
-    background-image: url('@{subdir}/images/home.jpg');
+    background-color: @near-black;
+    // Dark overlay keeps the white hero text readable on the light lichen photo
+    background-image:
+      linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url('@{subdir}/images/home-lichens.jpg');
     background-repeat: no-repeat;
     background-position: center top;
     background-size: cover;
@@ -1497,11 +1500,11 @@ img {
                 width: 65%;
                 max-width: 400px;
                 font-size: 1.8em;
-                border: 4px solid @med-green;
-                color: @med-green;
+                border: 4px solid @neutral-mid;
+                color: @text-strong;
                 border-radius: 0.375em;
                 &::placeholder {
-                  color: @med-green;
+                  color: @text-muted;
                 }
               }
               .clear-text {
@@ -1572,7 +1575,7 @@ img {
           .slide-col-2 {
             padding: 10px 0px 0 13px;
             .link-card {
-              background: #000000a6 0% 0% no-repeat padding-box;
+              background: @black-65 0% 0% no-repeat padding-box;
               border-radius: 8px;
               opacity: 1;
               padding: 15px 10px;
@@ -1666,7 +1669,7 @@ img {
           }
 
           .video-card {
-            background: #000000a6 0% 0% no-repeat padding-box;
+            background: @black-65 0% 0% no-repeat padding-box;
             border-radius: 8px;
             padding: 5px;
             margin-bottom: 15px;
@@ -1688,7 +1691,7 @@ img {
                 line-height: 1.1em;
                 font-weight: bold;
                 a {
-                  color: @light-green !important;
+                  color: @bg-panel !important;
                   cursor: pointer;
                 }
               }
@@ -1715,7 +1718,7 @@ img {
           }
 
           .slide-col-1 {
-            background: #000000a6 0% 0% no-repeat padding-box;
+            background: @black-65 0% 0% no-repeat padding-box;
             border-radius: 8px;
             opacity: 1;
             padding: 20px;
@@ -1742,7 +1745,7 @@ img {
               }
 
               a {
-                color: @med-green !important;
+                color: @bg-panel !important;
                 text-transform: uppercase;
               }
             }
@@ -1763,10 +1766,10 @@ img {
 
               .event-date {
                 padding: 10px;
-                background-color: #efffe3;
+                background-color: @bg-panel;
                 border-top-left-radius: 8px;
                 border-bottom-left-radius: 8px;
-                color: @dark-gray;
+                color: @text-dark;
                 font-weight: 600;
                 font-size: 1.1rem;
                 text-transform: uppercase;
@@ -1777,7 +1780,7 @@ img {
               }
               .event-desc {
                 padding: 10px;
-                background: #000000a6 0% 0% no-repeat padding-box;
+                background: @black-65 0% 0% no-repeat padding-box;
                 border-top-right-radius: 8px;
                 border-bottom-right-radius: 8px;
                 font-size: 1.125rem;
@@ -1816,13 +1819,13 @@ img {
             color: white;
             opacity: 1;
             font-size: 14px;
-            text-shadow: 0px 0px 3px @dark-grn-type;
+            text-shadow: 0px 0px 3px @text-strong;
           }
         }
 
         &.slick-active {
           button:before {
-            color: @med-green;
+            color: @accent;
             text-shadow: 0px 0px 3px black;
           }
         }
@@ -1844,14 +1847,14 @@ img {
 
     .issue-item {
       clear: both;
-      border-top: 1px dotted @dark-gray;
+      border-top: 1px dotted @text-dark;
 
       &:last-child {
-        border-bottom: 1px dotted @dark-gray;
+        border-bottom: 1px dotted @text-dark;
       }
 
       .issue-header {
-        background-color: @light-green;
+        background-color: @bg-panel;
         padding: 6px;
         height: 57px;
         margin-left: 0;
@@ -1886,14 +1889,14 @@ img {
         .more-less {
           flex-basis: 140px;
           font-size: 14px;
-          color: @dark-green;
+          color: @accent;
           text-transform: uppercase;
           margin-top: 4px;
           text-align: right;
           cursor: pointer;
 
           svg {
-            color: @med-green;
+            color: @accent;
             padding-top: 10px;
           }
         }
@@ -1925,7 +1928,7 @@ img {
   left: 0;
   right: 0;
   /*background-color: rgba(0,0,0,0.3);*/
-  background-color: @dark-gray;
+  background-color: @text-dark;
   padding: 12px 50px 0;
 }
 .close-modal {
@@ -1996,7 +1999,7 @@ img {
               height: 20%;
               min-height: 95px;
               width: 100%;
-              color: @gray-type;
+              color: @text-muted;
               font-size: 0.875rem;
               line-height: 1rem;
               overflow: hidden;
@@ -2008,8 +2011,8 @@ img {
               }
               .btn {
                 font-size: 0.88rem;
-                border: 1px solid @med-green !important;
-                color: @gray-type !important;
+                border: 1px solid @accent !important;
+                color: @text-muted !important;
                 padding: 0.2rem 0.75rem;
                 &:hover {
                   color: white !important;
@@ -2100,12 +2103,12 @@ img {
           border: 1px solid transparent !important;
           max-height: calc(100% - 10px);
           &:hover {
-            border: 1px solid @dark-green !important;
+            border: 1px solid @accent !important;
           }
         }
         .slick-current {
           .card {
-            border: 1px solid @light-green !important;
+            border: 1px solid @bg-panel !important;
           }
         }
       }
@@ -2116,7 +2119,7 @@ img {
         font-size: 28px;
         top: 38% !important;
         &:hover {
-          color: @light-green !important;
+          color: @bg-panel !important;
         }
       }
       .slick-next {
@@ -2162,11 +2165,21 @@ img {
   }
 }
 
+// !important matches the precedence these colors had as inline styles in iconButton.jsx
+.fake-button.icon-button-selected {
+  background: @bg-panel !important;
+  color: @accent !important;
+}
+.fake-button.icon-button-unselected {
+  color: @text-muted !important;
+}
+
 .explore,
 .identify,
 #react-garden,
 #react-rare {
   #sidebar {
+    background: @bg-panel;
     font-size: 0.9rem;
     padding-bottom: 1em;
     h3 {
@@ -2183,22 +2196,22 @@ img {
     }
     .currently-displayed {
       border-radius: 8px 8px 0 0;
-      border: 5px solid @light-green;
+      border: 5px solid @bg-panel;
       background-color: white;
       padding: 15px 10px 0 10px;
       margin-bottom: 0.75em;
       h3 {
-        color: @med-green;
+        color: @text-heading;
       }
 
       .stat {
-        border-bottom: 1px dashed @dark-gray;
+        border-bottom: 1px dashed @text-dark;
         font-size: 15px;
         line-height: 17px;
         padding: 8px 0;
 
         &:first-child {
-          border-top: 1px dashed @dark-gray;
+          border-top: 1px dashed @text-dark;
         }
         &:last-child {
           border-bottom: none;
@@ -2237,8 +2250,8 @@ img {
       margin-bottom: 1rem;
       input {
         font-size: 20px;
-        color: @med-green;
-        border: 3px solid @med-green;
+        color: @text-strong;
+        border: 3px solid @neutral-mid;
         display: inline;
         width: 80%;
         margin-right: 10px;
@@ -2290,7 +2303,7 @@ img {
     // Glossary word styling
     .glossary {
       cursor: pointer;
-      border-bottom: 1px dashed #3c641e;
+      border-bottom: 1px dashed @neutral-mid;
       font-size: 1em;
     }
   }
@@ -2309,11 +2322,11 @@ img {
     .filter-count {
       margin-left: 10px;
       text-transform: uppercase;
-      color: @med-green;
+      color: @text-heading;
       flex-basis: 45%;
       vertical-align: middle;
       .filter-value {
-        color: @type-primary;
+        color: @text-primary;
         font-weight: bold;
       }
     }
@@ -2330,7 +2343,7 @@ img {
           color: white !important;
         }
         &.back {
-          color: @med-green !important;
+          color: @accent !important;
         }
         path {
           color: inherit;
@@ -2360,7 +2373,7 @@ img {
       h4 {
         padding: 0;
         text-transform: uppercase;
-        color: @med-green;
+        color: @text-heading;
         font-weight: bold;
         font-size: 1.3em;
         cursor: 'default';
@@ -2387,7 +2400,7 @@ img {
           img {
             float: right;
             margin-top: 2px;
-            background-color: @med-green;
+            background-color: @neutral-mid;
             border-radius: 50%;
             height: 1.5em;
             width: 1.5em;
@@ -2412,7 +2425,7 @@ img {
             }
           }
           ul {
-            border-top: 1px dotted @dark-gray;
+            border-top: 1px dotted @text-dark;
             margin: 0.4em 0 0;
             padding-top: 0.5em;
             li {
@@ -2519,7 +2532,7 @@ img {
   }
   #view-opts {
     .cancel {
-      background-color: @med-green;
+      background-color: @neutral-mid;
       color: white;
       text-transform: uppercase;
     }
@@ -2541,7 +2554,7 @@ img {
       display: inline-block;
       font-size: 0.9rem;
       line-height: 1.6em;
-      color: @dark-grn-type;
+      color: @text-strong;
       vertical-align: middle;
       margin-right: 6px;
     }
@@ -2560,7 +2573,7 @@ img {
       padding-right: 5px !important;
     }
     .no-results {
-      color: @gray-type;
+      color: @text-muted;
     }
     h3 {
       margin-top: 0.3em;
@@ -2570,8 +2583,8 @@ img {
       cursor: pointer;
       border-radius: 3px;
       padding: 0.2em 0.6em;
-      background-color: @light-green;
-      color: @dark-grn-type;
+      background-color: @bg-panel;
+      color: @text-strong;
       margin: 0 0.4em 0.4em 0;
       font-size: 0.75em;
       line-height: 1.5em;
@@ -2582,9 +2595,9 @@ img {
       &.reset {
         display: inline-block;
         text-transform: uppercase;
-        background-color: #5fb021;
+        background-color: @neutral-mid;
         color: white;
-        border: 1px solid #999999;
+        border: 1px solid @text-muted;
         max-height: none;
       }
     }
@@ -2605,7 +2618,7 @@ img {
       display: block;
     }
     svg {
-      color: @med-green;
+      color: @accent;
       font-size: 2rem;
       margin-top: -3px;
     }
@@ -2622,9 +2635,9 @@ img {
       margin-top: 3em;
       overflow-y: scroll;
       max-height: 80vh;
-      --scrollbarBG: @med-green;
-      --thumbBG: #1b1b1b;
-      scrollbar-color: @med-green #1b1b1b;
+      --scrollbarBG: @neutral-mid;
+      --thumbBG: @near-black;
+      scrollbar-color: @neutral-mid @near-black;
       h1,
       h2 {
         color: white;
@@ -2669,7 +2682,7 @@ img {
         .sidebar-wrapper {
           margin-top: 1em;
           padding: 0 15px 0 0;
-          border-left: 1px dotted @dark-gray;
+          border-left: 1px dotted @text-dark;
           flex-basis: 33%;
           font-size: 14px;
           > div {
@@ -2677,7 +2690,7 @@ img {
           }
           h3 {
             margin: 0 0 1em;
-            color: @med-green;
+            color: @text-heading;
             font-size: 1.125rem;
             font-weight: bold;
           }
@@ -2710,7 +2723,7 @@ img {
     bottom: 0;
     top: auto;
     padding: 8px 20px 0;
-    background-color: @med-green;
+    background-color: @neutral-mid;
     box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.16);
     transition: height 150ms;
     &.active {
@@ -2719,7 +2732,7 @@ img {
     .modal-content {
       border: none;
       margin-top: 0;
-      color: @dark-grn-type;
+      color: @text-strong;
       font-weight: bold;
       height: 100%;
       min-height: 100px;
@@ -2733,15 +2746,15 @@ img {
         }
         .btn-primary {
           padding: 0.8rem 1.3rem;
-          background-color: @ivory !important;
+          background-color: @bg-page !important;
           background-image: none !important;
-          border: 3px solid @ivory !important;
-          color: @dark-grn-type !important;
+          border: 3px solid @bg-page !important;
+          color: @text-strong !important;
           font-size: 1.1rem;
           &:hover,
           &:active {
-            background-color: @med-green !important;
-            color: @ivory !important;
+            background-color: @accent-hover !important;
+            color: @bg-page !important;
           }
         }
       }
@@ -2854,7 +2867,7 @@ img {
             display: block;
             background-color: white;
             padding: 0;
-            border: 1px solid #cfcac2;
+            border: 1px solid @warm-gray;
             margin-bottom: 2rem;
             padding: 2em;
             h2 {
@@ -2973,7 +2986,7 @@ body.spatial {
       max-height: calc(100% - 60px);
       overflow: hidden;
       button {
-        background-color: @med-green !important;
+        background-color: @accent !important;
       }
       #spatialpanel {
         //max-height: calc(100% - 60px);
@@ -2990,14 +3003,14 @@ body.spatial {
         #criteriatab {
           #searchcriteria {
             button {
-              background-color: @med-green !important;
+              background-color: @accent !important;
             }
           }
         }
         #recordstab {
           #queryrecordsdiv {
             button {
-              background-color: @med-green !important;
+              background-color: @accent !important;
             }
           }
           .pagination {
@@ -3008,7 +3021,7 @@ body.spatial {
     }
   }
   #mapinfo {
-    background-color: @dark-green;
+    background-color: @neutral-mid-hover;
     #mapcoords {
       font-size: 0.8rem;
       text-shadow: none !important;
@@ -3029,7 +3042,7 @@ body.spatial {
       display: flex;
       flex-flow: row wrap;
       align-items: center;
-      background-color: @dark-green;
+      background-color: @neutral-mid-hover;
       .maptext {
         text-shadow: none !important;
         font-size: 0.9rem;
@@ -3073,7 +3086,7 @@ body.spatial {
       #deleteSelections {
         text-align: center;
         button {
-          background-color: @med-green !important;
+          background-color: @accent !important;
           &:hover {
           }
         }
@@ -3088,7 +3101,7 @@ body.spatial {
   }
   .ol-control {
     button {
-      background-color: rgba(60, 100, 30, 0.5) !important; //3C641E
+      background-color: fade(@accent, 50%) !important; //3C641E
     }
   }
   .ol-full-screen {
@@ -3139,6 +3152,6 @@ body.spatial {
   line-height: 1.25;
   cursor: pointer;
   &:hover {
-    border-color: @med-green;
+    border-color: @accent;
   }
 }

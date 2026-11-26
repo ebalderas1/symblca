@@ -28,12 +28,26 @@ Only **7 of the 11 files above are Webpack entries**: `theme`, `header`, `footer
 @dark-green: #3c641e;         @dark-grn-type: #1e352f;
 @dark-gray: #000000e3;        @gray-type: #999999;
 @type-primary: #000000c2;     @ivory: #fbf7ee;
+```
+The block above is the pre-2026-11 green palette, kept for history. Since the `261122-color-palette` plan, the variables are role-based (neutral palette, single dark-green accent):
+```less
+@bg-page: #fafaf7;  @bg-panel: #f0efeb;  @bg-panel-alpha: fade(@bg-panel, 80%);
+@accent: #3c641e;   @accent-hover: #2d4b16;   // links, primary buttons, active controls
+@accent-divider: lighten(@accent, 20%);  @accent-tint: fade(@accent, 10%);
+@neutral-mid: #5c5c5c;  @neutral-mid-hover: #454545;  // bars, secondary buttons, borders, scrollbars
+@text-heading: #333333; @text-strong: #222222; @text-primary: #000000c2;
+@text-dark: #000000e3;  @text-muted: #666666;
+@near-black: #1b1b1b;   @warm-gray: #cfcac2;   @black-65: #000000a6;
 @font: 'Source Sans Pro', sans-serif !important;
 
 // Breakpoints (match Bootstrap)
 @xlarge: 1200px; @large: 992px; @medium: 768px; @small: 576px;
 ```
-Mixins: `.text-capitalize()`, `.text-italic()`, `.text-uppercase()`, `.text-bold()`, `.text-drk-grn()`, `.text-center()`, `.bg-light-grn()`, `.border-rounded-sm()`, `.border-rounded-med()`, `.dropdown-hover()`, `.dropdown-current()`, `.collapsed-header()`.
+Mixins: `.text-capitalize()`, `.text-italic()`, `.text-uppercase()`, `.text-bold()`, `.text-drk-grn()`, `.text-center()`, `.bg-light-grn()`, `.border-rounded-sm()`, `.border-rounded-med()`, `.dropdown-hover()`, `.dropdown-current()`, `.collapsed-header()`. Note: `.text-drk-grn()` and `.bg-light-grn()` kept their old names but now apply `@text-strong` and `@bg-panel` (gray, not green). Likewise the JSX class `.text-light-green` (used only on `h3` headings) now renders `@text-heading`.
+
+Palette colors live only in `mixins.less`; the other LESS files and JSX have no palette hex literals (only neutrals like white/black/gray and alert colors). Images are not covered: the header fern photo, search magnifier icons and `images/garden/*ViewIcon-*.png` stay green. The home hero (`.wrapper` in `theme.less`) uses `images/home-lichens.jpg` under a 50% black overlay so the white hero text stays readable.
+
+Symbiota-based pages (map search, collections, image library) are styled by `css/symbiota/customizations.css`, not by these LESS files. Its `--oregonflora-green` / `--oregonflora-light-green` variables are set to the same values as `@accent` / `@bg-panel` and must be updated by hand if the palette changes.
 
 ## PHP template -> compiled CSS mapping (verified by grepping `<link>` tags, not assumed from JS bundle names)
 | Page template | CSS loaded |

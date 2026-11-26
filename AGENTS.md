@@ -60,6 +60,6 @@ Naming: `<domain>-<topic>.md`, kebab-case, `name:` frontmatter always equals the
 
 ## Specs and Plans
 - Feature specs (sdd workflow): `docs/agent-docs/specs/<YYMMDD>-<slug>/`
-- Implementation plans (pdd workflow): `docs/agent-docs/plans/<YYMMDD>-<slug>/`
+- Implementation plans (pdd workflow): `docs/agent-docs/plans/<YYMMDD>-<slug>/`; start from `docs/agent-docs/plans/_template/` (PLAN.md with a Handoff section + TASKS.md)
 
 <!-- docs-baseline: 9bb94ef6d6a4e5e8caa2a486920f7ae41388b873 -->
