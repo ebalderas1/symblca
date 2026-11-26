@@ -1,6 +1,6 @@
 # Tasks: Replace the green header photo
 
-Status: in-progress
+Status: complete
 Plan: PLAN.md
 
 ## Wave 1: Baseline
@@ -17,5 +17,5 @@ Plan: PLAN.md
 
 ## Wave 3: Review
 
-- [ ] T3: Re-take the T1 screenshots, compare, and sign off
+- [x] T3: Re-take the T1 screenshots, compare, and sign off
   - Done when: user signs off; the old `OF-Header_May8*.png` files are deleted if nothing references them.

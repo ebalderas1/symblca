@@ -1,6 +1,6 @@
 # Plan: Replace the green header photo
 
-Status: approved
+Status: complete
 Request: Replace the green fern photo behind the site header with my own photo, with a solid gray accent, to match the neutral palette.
 Spec: none
 
@@ -26,8 +26,8 @@ Scope confirmed with user (2026-11-26): header photo only. Magnifier icons, grid
 
 - Last session: 2026-11-26
 - Branch: `feature/palette-images` (from `dev`, which includes the PR #1 palette)
-- Current state: T1 done. T2 in progress: inline style removed from `header/main.jsx`; `header.less` has the 70% `@neutral-mid` tint (user approved the tint); photo switched from a Cladonia crop to `header-spores.jpg`.
-- Next step: finish T2 (rebuild, check, remove the unused `header-cladonia.jpg`, commit), then T3.
+- Current state: complete. T1-T3 done and signed off; header shows the gray-tinted lichen spore photo; old `OF-Header_May8*.png` images deleted.
+- Next step: push `feature/palette-images` and open a PR into `dev`.
 - Open questions: none.
 - Learned:
   - Source photo is only 232x911; rotated 90° to fit the band. Use a higher-res original if available.
