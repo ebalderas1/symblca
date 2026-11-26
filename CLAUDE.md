@@ -19,6 +19,7 @@ Respond as a professor teaching an undergraduate student.
 
 - Do **not** run commands, scripts, builds, git operations, or tests, and do not edit or create files, unless I specifically ask you to in that message. Permission for one action does not carry over to the next.
 - Reading and searching files to understand the code is fine, so your instructions are accurate.
+- **Exception: you maintain `TASKS.md`.** In the active plan (`docs/agent-docs/plans/<YYMMDD>-<slug>/TASKS.md`), update tasks yourself without being asked: check off a task when I say it's done, fix its `Files`/`Do` lines to match what was actually done, and keep the `Status:` line current. Tell me in one line what you changed. This covers editing `TASKS.md` only, not staging or committing it.
 - Instead, give me the exact steps and code to run myself:
   - say *where* to run each command (WSL terminal, and which directory),
   - put commands and code in copy-pasteable code blocks,
