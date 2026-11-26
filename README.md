@@ -53,11 +53,13 @@ Please read the [INSTALL.md](docs/INSTALL.md) file for installation instructions
 
 Please read the [UPDATE.md](docs/UPDATE.md) file for instructions on how to update Symbiota.
 
-# [OregonFlora](https://oregonflora.org/)
+# Lichen Conservation Alliance
 
-A [Symbiota](http://symbiota.org) portal focusing on the vascular plants of Oregon. For the Symbiota README, see 
+A [Symbiota](http://symbiota.org) portal focusing on the threatened lichens of North America. For the Symbiota README, see 
 above. In addition to the basic Symbiota environment,
 **PHP >= 7** is required for this project, along with the **php-apcu** package.
+
+This site was built upon code forked from The [Oregon Flora Website](https://oregonflora.org/). The following language is from the Oregon Flora README:
 
 This site features content that diverges significantly from the Symbiota project, while still adhering to the 
 Symbiota database structure and maintaining core Symbiota features.
