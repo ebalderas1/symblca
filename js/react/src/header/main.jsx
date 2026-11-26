@@ -282,10 +282,7 @@ class HeaderApp extends React.Component {
     }
 
     return (
-      <div
-        className="header-wrapper"
-        style={{ backgroundImage: `url(${this.props.clientRoot}/images/header/OF-Header_May8.png)` }}
-      >
+       <div className="header-wrapper">
         <div className="fixed-logo-wrapper">
           <a
             id="fixed-logo"
