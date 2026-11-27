@@ -273,8 +273,8 @@ class HeaderApp extends React.Component {
   }
 
   render() {
-    let lgLogo = `${this.props.clientRoot}/images/header/oregonflora-logo2.png`;
-    let smLogo = `${this.props.clientRoot}/images/header/oregonflora-logo-sm2.png`;
+    let lgLogo = `${this.props.clientRoot}/images/header/logo-tall.png`;
+    let smLogo = `${this.props.clientRoot}/images/header/logo-wide.png`;
     let mainOpacity = (this.state.headerHeight - 60) / 40;
     let fixedLogoClass = 'tall';
     if (this.state.headerHeight == 60) {
@@ -290,8 +290,8 @@ class HeaderApp extends React.Component {
             rel="external"
             href={`${this.props.clientRoot}/`}
           >
-            <img style={{ opacity: mainOpacity }} id="site-header-logo" src={lgLogo} alt="OregonFlora" />
-            <img style={{ opacity: 1 - mainOpacity }} id="site-header-logo-sm" src={smLogo} alt="OregonFlora" />
+            <img style={{ opacity: mainOpacity }} id="site-header-logo" src={lgLogo} alt="Lichen Conservation Alliance" />
+            <img style={{ opacity: 1 - mainOpacity }} id="site-header-logo-sm" src={smLogo} alt="Lichen Conservation Alliance" />
           </a>
         </div>
         <nav
