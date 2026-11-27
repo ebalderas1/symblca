@@ -42,13 +42,17 @@ Respond as a professor teaching an undergraduate student.
 Update this section at the end of each session (when I say we're wrapping up), so the next session can pick up cold.
 
 - **Last updated:** 2026-11-26
-- **Checked-out branch:** `feature/color-palette`
-- **Current state:** The color palette work is complete (plan: `docs/agent-docs/plans/261122-color-palette/`). PR #1 (`feature/color-palette` → `dev`) is open, mergeable, with no reviews and no CI. Not merged yet.
-- **Uncommitted:** `includes/donationButton.php` and `includes/minimalheader.php` are untracked; they're mine and not part of PR #1.
+- **Checked-out branch:** `feature/header-logo`
+- **Current state:**
+  - Merged into `dev`: color palette (PR #1, plan `261122-color-palette`), CLAUDE.md handoff (PR #2), gray-tinted lichen spore header photo (plan `261126-palette-images`).
+  - Open, not merged: PR `feature/header-logo` → `dev` (probably #4). It replaces the OregonFlora header logo with a placeholder Lichen Conservation Alliance logo: `images/header/logo-tall.png` (174x244) and `logo-wide.png` (174x100, the tall logo scaled to fit and centered on transparency, made with PHP GD from `C:\Users\balde\Pictures\Logo_temp.png`). Alt text updated in `js/react/src/header/main.jsx`. No plan folder (small change). Reviewed on GitHub; looks good.
+- **Uncommitted:** `includes/donationButton.php` and `includes/minimalheader.php` are untracked; they're mine and stay out of all commits.
 - **Next up (ideas, not started):**
-  - Decide whether to merge PR #1.
+  - Merge the header-logo PR (merge commit), then `git switch dev`, `git pull`, `npm run build`.
+  - Replace the placeholder logo with the final one, ideally with a real wide/small version for the 87x50 slot.
+  - After the final logo is in, `git rm` the unused `images/header/oregonflora-logo*.png`.
   - Fix mobile home-page text overflowing the right edge (pre-existing).
   - Rename hue-named styles that now render gray: `.text-drk-grn()`, `.bg-light-grn()`, `.text-light-green`.
-  - Replace green image assets (header fern photo, magnifier icons, garden view-toggle icons).
+  - Replace remaining green image assets (magnifier icons, garden view-toggle icons); deferred by choice.
   - Remove the unused `images/home.jpg`.
 - **Open questions:** none.
